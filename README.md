@@ -3,9 +3,10 @@ This includes scripts to run performance tests against CouchDB to evaluate chang
 
 We are testing three different filtering options:
 
-* built-in `doc_ids` filter with 1k ids
-* Mango selector using `$in` operator for `_id` against 1k ids
+* built-in `doc_ids` filter with 20k ids
+* ~~Mango selector using `$in` operator for `_id` against 20k ids~~ (disabled bc of poor performance)
 * Mango selector using `$gt` for `_id`
+* Mango selector using `$regex` for `_id`
 
 
 This project includes a few files:
@@ -74,7 +75,6 @@ This is the [data.csv](data.csv), and this the resulting graph:
 
 ![A lineplot showing the test results](graph.png)
 
-I think what's interferring with the performance tests is the compactation. I [haven't managed yet to turn it off](setup.sh). Any help is greatly appreciated!
 
 
 Made with passion for the couch © 2020 by Johannes
